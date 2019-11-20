@@ -19,7 +19,8 @@ public class DAL_Estudiantes {
     private String password = "root";
     private Connection connection = null;
 
-    public DAL_Estudiantes() {
+    public DAL_Estudiantes(){
+      //Class.forName("com.mysql.jdbc.Driver");  
     }
 
     public void insertNombre(String nombre) throws SQLException, ClassNotFoundException {

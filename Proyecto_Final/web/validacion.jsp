@@ -24,7 +24,7 @@
 
         <%
 
-    //Datos Estudiante
+            //Datos Estudiante
             String nombre = request.getParameter("nombre");
             String primer_apellido = request.getParameter("primer_apellido");
             String segundo_apellido = request.getParameter("segundo_apellido");
@@ -32,15 +32,15 @@
             String fecha_nacimiento = request.getParameter("fecha_nacimiento");
             String telefono = request.getParameter("telefono");
             String correo = request.getParameter("correo");
-    //Datos Madre
+            //Datos Madre
             String nombre_madre = request.getParameter("nombre_madre");
             String primer_apellido_madre = request.getParameter("primer_apellido_madre");
             String segundo_apellido_madre = request.getParameter("segundo_apellido_madre");
-    //Datos Padre
+            //Datos Padre
             String nombre_padre = request.getParameter("nombre_padre");
             String primer_apellido_padre = request.getParameter("primer_apellido_padre");
             String segundo_apellido_padre = request.getParameter("segundo_apellido_padre");
-    //Datos Grados
+            //Datos Grados
             String grado = request.getParameter("grado");
             String primer_grado = request.getParameter("primer_grado");
             String segundo_grado = request.getParameter("segundo_grado");
@@ -48,13 +48,14 @@
             String cuarto_grado = request.getParameter("cuarto_grado");
             String quinto_grado = request.getParameter("quinto_grado");
             String sexto_grado = request.getParameter("sexto_grado");
-    //Datos materias
+            //Datos materias
             String espanol = request.getParameter("espanol");
             String ciencias = request.getParameter("ciencias");
             String ingles = request.getParameter("ingles");
             String matematicas = request.getParameter("matematicas");
             String civica = request.getParameter("civica");
             String estudios_sociales = request.getParameter("estudios_sociales");
+            Validador validar = new Validador();
         %>
 
 
@@ -64,27 +65,28 @@
 
                 out.println("Por favor ingrese todos los datos");
 
+
         %>
         <br><a href="matricula.html">Regresar al Formulario</a>
-        <%    } else {
-        %>      
+        <%    } else if (validar.AtributosCorrectos(correo)) {
 
-        <!-- Despues de validar los datos se envian a la base de datos-->
-        <%
-            {
+// Despues de validar los datos se envian a la base de datos-->
+            try {
 
-                try {
+                BLL_Estudiantes bll_estudiantes = new BLL_Estudiantes();
 
-                    BLL_Estudiantes bll_estudiantes = new BLL_Estudiantes();
-                    boolean result = bll_estudiantes.InsertarNombre(nombre);
-                  
+                boolean result = bll_estudiantes.InsertarNombre(nombre);
 
-                } catch (Exception e) {
-                    throw new IllegalStateException(e);
-                }
+                boolean result2 = bll_estudiantes.InsertarPrimer_apellido(primer_apellido);
+                boolean result3 = bll_estudiantes.InsertarSegundo_apellido(segundo_apellido);
+                //
+
+            } catch (Exception e) {
+                throw new IllegalStateException(e);
             }
 
-        %>
+
+        %>      
         <!---->
         <!-- Despues de enviar los datos a la DB se le manda al usuario la confirmacion de los datos-->
 
@@ -180,6 +182,9 @@
         %>
         <br>
         <%
+            } else {
+
+                out.println("Por favor ingrese un correo valido");
             }
         %>
 
