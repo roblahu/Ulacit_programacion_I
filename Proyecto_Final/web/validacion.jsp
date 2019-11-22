@@ -75,10 +75,9 @@
 
                 BLL_Estudiantes bll_estudiantes = new BLL_Estudiantes();
 
-                boolean result = bll_estudiantes.InsertarNombre(nombre);
+                boolean result = bll_estudiantes.InsertarEstudiante(nombre, primer_apellido,segundo_apellido,cedula,fecha_nacimiento,telefono,correo,nombre_madre,primer_apellido_madre,segundo_apellido_madre,nombre_padre,primer_apellido_padre,segundo_apellido_padre);
 
-                boolean result2 = bll_estudiantes.InsertarPrimer_apellido(primer_apellido);
-                boolean result3 = bll_estudiantes.InsertarSegundo_apellido(segundo_apellido);
+               
                 //
 
             } catch (Exception e) {
