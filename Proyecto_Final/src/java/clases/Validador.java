@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package clases;
+import java.util.regex.*;
 
 /**
  *
@@ -41,5 +43,24 @@ public class Validador {
         }
         //
         return resultado;
+    }
+    public boolean EsCedula(String pCedula){
+        boolean resultado = false;
+        boolean lengthTrue = pCedula.length() > 6;
+        if(Pattern.matches("[0-9]", pCedula) && lengthTrue){
+            resultado = true;
+        }
+        return resultado;
+//        return Pattern.matches("[0-9]", pCedula) && pCedula.length() > 6;  
+    }
+    public boolean EsTelefono(String pTelefono){
+        boolean resultado = false;
+        boolean lengthTrue = pTelefono.length() == 8;
+        if(Pattern.matches("[0-9]", pTelefono) && lengthTrue){
+            resultado = true;
+        }
+        return resultado;
+        
+//        return Pattern.matches("[0-9]{8}", pNumero);
     }
 }

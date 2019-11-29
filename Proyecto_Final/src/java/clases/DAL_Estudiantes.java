@@ -23,8 +23,21 @@ public class DAL_Estudiantes {
       //Class.forName("com.mysql.jdbc.Driver");  
     }
 
-    public void insertEstudiante(String nombre, 
-            String primer_apellido, String segundo_apellido, String cedula, String fecha_nacimiento, String telefono, String correo, String nombre_madre, String primer_apellido_madre, String segundo_apellido_madre, String nombre_padre, String primer_apellido_padre, String segundo_apellido_padre) throws SQLException, ClassNotFoundException {
+    public void insertEstudiante(
+            String nombre, 
+            String primer_apellido, 
+            String segundo_apellido, 
+            String cedula, 
+            String fecha_nacimiento, 
+            String telefono, 
+            String correo, 
+            String nombre_madre, 
+            String primer_apellido_madre, 
+            String segundo_apellido_madre, 
+            String nombre_padre, 
+            String primer_apellido_padre, 
+            String segundo_apellido_padre
+        ) throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.jdbc.Driver");
         connection = DriverManager.getConnection(url, username, password);
         Statement stmt = connection.createStatement();
@@ -32,10 +45,34 @@ public class DAL_Estudiantes {
                 + "cedula,fecha_nacimiento,telefono,correo,nombre_madre,"
                 + "primer_apellido_madre,segundo_apellido_madre,nombre_padre,"
                 + "primer_apellido_padre,segundo_apellido_padre) "
-                + "values ('" + nombre + "','" + primer_apellido + "','" + 
-                segundo_apellido + "','" + cedula + "','" + fecha_nacimiento + "','" + telefono + "','" + correo + "','" + nombre_madre + "','" 
-                + primer_apellido_madre + "','" + segundo_apellido_madre + "','" + nombre_padre + "','" + primer_apellido_padre + "','" 
-                + segundo_apellido_padre + "')", 0);
+                + "values ('" 
+                    + nombre 
+                    + "','" 
+                    + primer_apellido 
+                    + "','" 
+                    + segundo_apellido 
+                    + "','" 
+                    + cedula 
+                    + "','" 
+                    + fecha_nacimiento 
+                    + "','" 
+                    + telefono 
+                    + "','" 
+                    + correo 
+                    + "','" 
+                    + nombre_madre 
+                    + "','"
+                    + primer_apellido_madre 
+                    + "','" 
+                    + segundo_apellido_madre 
+                    + "','" 
+                    + nombre_padre 
+                    + "','" 
+                    + primer_apellido_padre 
+                    + "','"
+                    + segundo_apellido_padre 
+                    + "')", 
+                0);
 
     }
 
