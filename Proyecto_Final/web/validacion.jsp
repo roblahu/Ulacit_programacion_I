@@ -42,26 +42,17 @@
             String segundo_apellido_padre = request.getParameter("segundo_apellido_padre");
             //Datos Grados
             String grado = request.getParameter("grado");
-            String primer_grado = request.getParameter("primer_grado");
-            String segundo_grado = request.getParameter("segundo_grado");
-            String tercer_grado = request.getParameter("tercer_grado");
-            String cuarto_grado = request.getParameter("cuarto_grado");
-            String quinto_grado = request.getParameter("quinto_grado");
-            String sexto_grado = request.getParameter("sexto_grado");
-            //Datos materias
-            String espanol = request.getParameter("espanol");
-            String ciencias = request.getParameter("ciencias");
-            String ingles = request.getParameter("ingles");
-            String matematicas = request.getParameter("matematicas");
-            String civica = request.getParameter("civica");
-            String estudios_sociales = request.getParameter("estudios_sociales");
             Validador validar = new Validador();
         %>
 
 
         <!-- Despues de obtener los datos hay que validarlos-->
 
-        <%if (nombre.isEmpty() || primer_apellido.isEmpty() || segundo_apellido.isEmpty() || cedula.isEmpty() || fecha_nacimiento.isEmpty() || telefono.isEmpty() || correo.isEmpty() || nombre_madre.isEmpty() || primer_apellido_madre.isEmpty() || segundo_apellido_madre.isEmpty() || nombre_padre.isEmpty() || primer_apellido_padre.isEmpty() || segundo_apellido_padre.isEmpty()) {
+        <%if (nombre.isEmpty() || primer_apellido.isEmpty()
+                    || segundo_apellido.isEmpty() || cedula.isEmpty() || fecha_nacimiento.isEmpty()
+                    || telefono.isEmpty() || correo.isEmpty() || nombre_madre.isEmpty() || primer_apellido_madre.isEmpty()
+                    || segundo_apellido_madre.isEmpty() || nombre_padre.isEmpty() || primer_apellido_padre.isEmpty()
+                    || segundo_apellido_padre.isEmpty() || grado.isEmpty()) {
 
                 out.println("Por favor ingrese todos los datos");
 
@@ -75,11 +66,11 @@
 
                 BLL_Estudiantes bll_estudiantes = new BLL_Estudiantes();
 
-                boolean result = bll_estudiantes.InsertarEstudiante(nombre, primer_apellido,segundo_apellido,cedula,fecha_nacimiento,telefono,correo,nombre_madre,primer_apellido_madre,segundo_apellido_madre,nombre_padre,primer_apellido_padre,segundo_apellido_padre);
+                boolean result = bll_estudiantes.InsertarEstudiante(nombre, primer_apellido,
+                        segundo_apellido, cedula, fecha_nacimiento, telefono, correo, nombre_madre, primer_apellido_madre,
+                        segundo_apellido_madre, nombre_padre, primer_apellido_padre, segundo_apellido_padre, grado);
 
-               
                 //
-
             } catch (Exception e) {
                 throw new IllegalStateException(e);
             }
@@ -141,44 +132,7 @@
             if (grado != null && grado != "") {
                 out.println(grado);
             }
-        %>
-        <br>
-        <h3>Materias Seleccionadas</h3>
-        <%
-            if (espanol != null && espanol != "") {
-                out.println("Español");
-            }
-        %>
-        <br>
-        <%
-            if (ciencias != null && ciencias != "") {
-                out.println("Ciencias");
-            }
-        %>
-        <br>
-        <%
-            if (ingles != null && ingles != "") {
-                out.println("Ingles");
-            }
-        %>
-        <br>
-        <%
-            if (matematicas != null && matematicas != "") {
-                out.println("Matemáticas");
-            }
-        %>
-        <br>
-        <%
-            if (civica != null && civica != "") {
-                out.println("Cívica");
-            }
-        %>
-        <br>
-        <%
-            if (estudios_sociales != null && estudios_sociales != "") {
-                out.println("Estudios Sociales");
-            }
-        %>
+        %>        
         <br>
         <%
             } else {

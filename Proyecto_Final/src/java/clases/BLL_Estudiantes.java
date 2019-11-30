@@ -27,7 +27,8 @@ public class BLL_Estudiantes {
             String segundo_apellido_madre, 
             String nombre_padre, 
             String primer_apellido_padre, 
-            String segundo_apellido_padre
+            String segundo_apellido_padre,
+            String grado
     ) throws SQLException, ClassNotFoundException {
         boolean resultado = false;
         if (nombre == "") {
@@ -46,7 +47,8 @@ public class BLL_Estudiantes {
                     segundo_apellido_madre,
                     nombre_padre,
                     primer_apellido_padre,
-                    segundo_apellido_padre);
+                    segundo_apellido_padre,
+                    grado);
             resultado = true;
         }
         return resultado;
@@ -54,5 +56,3 @@ public class BLL_Estudiantes {
 
     // sys config --- color - fecha
     }
-    
-
