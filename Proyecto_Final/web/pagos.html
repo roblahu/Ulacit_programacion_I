@@ -24,7 +24,7 @@
       <ul class="nav navbar-nav">    
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Estudiantes Actuales <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="estudiantes.html">Información de Estudiantes</a></li>
+            <li><a href="estudiantes.jsp">Informacion de Estudiantes</a></li>
             <li><a href="pagos.html">Realizar Pagos</a></li>
           </ul>
         </li>
@@ -37,14 +37,17 @@
 
   <body>
  <center>
-<h4>Ingrese el número de cédula del estudiante</h4>
+<h4>Ingrese el numero de cedula del estudiante</h4>
 <br>
-  <div class="search-container">
-      <form action="/pagos.jsp">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+  
+          
+          
+          <form method="post" name="frm" action="busqueda.jsp">
+<table border="0" width="300" align="center" bgcolor="#CDFFFF">
+<tr><td><b>Cedula</b></td><td><input  type="text" name="cedula" id="cedula">
+<tr><td colspan=2 align="center"><input  type="submit" name="submit" value="Submit"></td></tr>
+</table>
+</form>
 </center>
 </body>
 </html>

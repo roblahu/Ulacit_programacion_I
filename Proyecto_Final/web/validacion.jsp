@@ -73,6 +73,8 @@
                 //
             } catch (Exception e) {
                 throw new IllegalStateException(e);
+
+                
             }
 
 
@@ -137,9 +139,10 @@
         <%
             } else {
 
-                out.println("Por favor ingrese un correo valido");
+                out.println("Por favor verifique los datos");
             }
         %>
 
+        
     </body>
 </html>   
