@@ -47,7 +47,9 @@ public class Validador {
     public boolean EsCedula(String pCedula){
         boolean resultado = false;
         boolean lengthTrue = pCedula.length() > 6;
-        if(Pattern.matches("[0-9]", pCedula) && lengthTrue){
+        Pattern regex = Pattern.compile("[0-9]");
+        Matcher matcher = regex.matcher(pCedula);
+        if(matcher.find() && lengthTrue){
             resultado = true;
         }
         return resultado;
@@ -56,7 +58,9 @@ public class Validador {
     public boolean EsTelefono(String pTelefono){
         boolean resultado = false;
         boolean lengthTrue = pTelefono.length() == 8;
-        if(Pattern.matches("[0-9]", pTelefono) && lengthTrue){
+        Pattern regex = Pattern.compile("[0-9]");
+        Matcher matcher = regex.matcher(pTelefono);
+        if(matcher.find() && lengthTrue){
             resultado = true;
         }
         return resultado;
