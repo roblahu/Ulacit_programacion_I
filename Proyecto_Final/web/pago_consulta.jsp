@@ -6,7 +6,7 @@
 
     <html>  
 <head>
-    <title>Estudiantes</title>
+    <title>Pagos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -29,7 +29,7 @@
         <ul class="nav navbar-nav">    
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Estudiantes Actuales <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                     <li><a href="informacion.html">Informacion de Estudiantes</a></li>
+                    <li><a href="informacion.html">Informacion de Estudiantes</a></li>
                     <li><a href="pagos.html">Realizar Pagos</a></li>
                 </ul>
             </li>
@@ -37,11 +37,11 @@
     </div>
 </nav>
 
-<h2 align="center">Base de datos Estudiantes</h2>
+<h2 align="center">Pagos de Estudiantes</h2>
 <%
     
     String cedula = request.getParameter("cedula");
-    try {
+    
         /* Create string of connection url within specified format with machine name, port number and database name. Here machine name id localhost and database name is student. */
         String connectionURL = "jdbc:mysql://localhost:8889/matricula?zeroDateTimeBehavior=convertToNull";
 
@@ -64,7 +64,7 @@
 to the specified database. */
         statement = connection.createStatement();
         // sql query to retrieve values from the secified table.
-        String QueryString = "SELECT * from estudiantes where cedula='"+cedula+"' order by cedula";
+        String QueryString = "SELECT estudiantes.nombre, estudiantes.primer_apellido, estudiantes.segundo_apellido, estudiantes.cedula, estudiantes.grado, mensualidades.precio, estudiantes.pago_al_dia, estudiantes.fecha_pago FROM mensualidades, estudiantes WHERE mensualidades.grado=estudiantes.grado AND estudiantes.cedula= "+cedula+" ORDER BY cedula";
         rs = statement.executeQuery(QueryString);
 %>
 <TABLE cellpadding="15" border="1" style="background-color: #ffffcc;" align="center">
@@ -74,19 +74,17 @@ to the specified database. */
         <th>Primer Apellido</th>
         <th>Segundo Apellido</th>
         <th>Cedula</th>
-        <th>Fecha de Nacimiento</th>
-        <th>Telefono</th>
-        <th>Correo</th>
-        <th>Nombre Madre</th>
-        <th>Primer Apellido Madre</th>
-        <th>Segundo Apellido Madre</th>
-        <th>Nombre Padre</th>
-        <th>Primer Apellido Padre</th>
-        <th>Segundo Apellido Padre</th>
         <th>Grado</th>
+        <th>Mensualidad</th>
+        <th>Pago al Dia</th>
+        <th>Ultimo Pago</th>
+        
     </TR>
     <%
+        String estatus = "";
+
         while (rs.next()) {
+           estatus = rs.getString(7) ;
     %>
     
     <TR>
@@ -94,34 +92,37 @@ to the specified database. */
         <TD><%=rs.getString(2)%></TD>       
         <TD><%=rs.getString(3)%></TD>        
         <TD><%=rs.getString(4)%></TD>        
-        <TD><%=rs.getString(5)%></TD>        
-        <TD><%=rs.getString(6)%></TD>        
-        <TD><%=rs.getString(7)%></TD>        
-        <TD><%=rs.getString(8)%></TD>        
-        <TD><%=rs.getString(9)%></TD>       
-        <TD><%=rs.getString(10)%></TD>       
-        <TD><%=rs.getString(11)%></TD>        
-        <TD><%=rs.getString(12)%></TD>        
-        <TD><%=rs.getString(13)%></TD>      
-        <TD><%=rs.getString(14)%></TD>
+        <TD><%=rs.getString(5)%></TD>
+        <TD><%=rs.getString(6)%></TD>
+        <TD><%=rs.getString(7)%></TD>
+        <TD><%=rs.getString(8)%></TD>
+        
+    </TR>  
+    </TABLE>
 
-    </TR>
+<% } 
+           
 
-
-
-    <%   }    %>
+ if(estatus.contains("no")) { %>
+    <br>
+  
+          <form method="post" name="pago" action="checkout.html">
+<table border="0" width="300" align="center" bgcolor="#CDFFFF">
+<tr><td colspan=2 align="center"><input  type="submit" name="submit" value="Pagar"></td></tr>
+ <div class="col-sm-12" style="background-color:#CECECE;">
+    
+</table>
+</form>
     <%
-            // close all the connections.
+  } 
+
+else{ 
+out.println("Pagos al dia");
+}
             rs.close();
             statement.close();
             connection.close();
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
+   %>  
 
-        }
-    %>
-
-
-</TABLE>
 </body>
 </html>

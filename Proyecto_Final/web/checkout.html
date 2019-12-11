@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+<head>
+  <title>Realizar Pagos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+dd { margin-left: 75px; }
+#mode_margin { margin-left: 0px; }
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Programacion I</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevos Estudiantes<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="matricula.html">Matricular Estudiante</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav">    
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Estudiantes Actuales <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="informacion.html">Informacion de Estudiantes</a></li>
+            <li><a href="pagos.html">Realizar Pagos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Realizar Pagos</h2>
+  </div>
+
+    <center>    
+        <form id="AriaPay" name="AriaPay" action="checkout_validacion.jsp" method="post">   
+    <fieldset class="paymethodfieldset">
+        <dl>  
+                                               
+        <div>
+            <h2>          
+                <input type=radio name=formOfPayment id=formOfPayment value=CreditCard />
+                    Pagar con Tarjeta de Credito</h2>             
+        </div>      
+        
+        <dt>Numero de tarjeta</dt>
+        <dd>
+            <input type="text" id="cc_no" name="cc_no" value="4111111111111111"/>
+            <span id="err_cc_no" class="jserror"> </span>
+        </dd>            
+        <dt>Fecha de Expiracion</dt>
+        <dd>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td><select id="cc_exp_mm" name="cc_exp_mm">
+                            <option value="">Mes</option>
+                            <option value="1" selected="selected">Enero</option>                                 
+                            <option value="2">Febrero</option>                              
+                            <option value="3">Marzo</option>                           
+                            <option value="4">Abril</option>                           
+                            <option value="5">Mayo</option>                            
+                            <option value="6">Junio</option>                            
+                            <option value="7">Julio</option>                           
+                            <option value="8">Agosto</option>                             
+                            <option value="9">Septiembre</option>                     
+                            <option value="10">Octubre</option>                              
+                            <option value="11">Noviembre</option>                             
+                            <option value="12">Deciembre</option>                             
+                        </select></td>                         
+                    <td width="20">&nbsp;</td>                         
+                    <td><select id="cc_exp_yyyy" name="cc_exp_yyyy">
+<option value="">Año</option>
+                            <option value="2016" selected="selected">2016</option>                                 
+                            <option value="2017">2017</option>                              
+                            <option value="2018">2018</option>                           
+                            <option value="2019">2019</option>                           
+                            <option value="2020">2020</option>                            
+                            <option value="2021">2021</option>                            
+                            <option value="2022">2022</option>                           
+                            <option value="2023">2023</option>                             
+                            <option value="2024">2024</option>                     
+                            <option value="2025">2025</option>                              
+                            <option value="2026">2026</option>                             
+                            <option value="2027">2027</option>
+<option value="2028">2028</option>                             
+                            <option value="2029">2029</option>
+<option value="2030">2030</option>
+                        </select>                         
+                    </td>                     
+                </tr>                 
+            </table>             
+        </dd>
+        <dt>Codigo de Seguridad</dt>
+        <dd>
+            <input id="cvv" type="text" size="5" name="cvv" value="111"/>
+        </dd>
+        </dl>     
+</fieldset>     
+<fieldset >
+    <dl id="payMethodACH" >
+                <div class="Section_Header">                 
+            <h2>                     
+                <input type=radio name=formOfPayment id=formOfPayment value=ACH />                     
+                Pagar con Transferencia</h2>             
+        </div>             
+        <dt>Numero de Cédula</dt>
+
+        <dd>                 
+            <input type="text" id="bank_routing_num" name="bank_routing_num" value="999999992"/>             
+        </dd>             
+        <dt>Numero de Cuenta IBAN</dt>            
+        <dd>                 
+            <input type="text" id="bank_acct_num" name="bank_acct_num" value="11111111111111111" />             
+        </dd>         
+    </dl>     
+</fieldset>           
+<fieldset>        
+     <dl>           
+         <tr><td><b>Reconfirme cedula del estudiante</b></td><td><input  type="text" name="cedula" id="cedula">
+        <dd class="button">                 
+            <input type="submit" name="submitPayment" id="submitPayment" value="Pagar" />             
+        </dd>         
+    </dl>     
+</fieldset>
+</form>
+ </center>
+</body>
+</html>

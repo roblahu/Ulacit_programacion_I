@@ -29,7 +29,7 @@
         <ul class="nav navbar-nav">    
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Estudiantes Actuales <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="estudiantes.jsp">Información de Estudiantes</a></li>
+                    <li><a href="informacion.html">Información de Estudiantes</a></li>
                     <li><a href="pagos.html">Realizar Pagos</a></li>
                 </ul>
             </li>
