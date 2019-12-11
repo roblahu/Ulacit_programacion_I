@@ -12,31 +12,31 @@ import java.sql.Statement;
 
 public class DAL_Estudiantes {
 
-   
-
     private String url = "jdbc:mysql://localhost:8889/matricula?zeroDateTimeBehavior=convertToNull";
     private String username = "root";
     private String password = "root";
     private Connection connection = null;
 
-    public DAL_Estudiantes(){
-      //Class.forName("com.mysql.jdbc.Driver");  
+    public DAL_Estudiantes() {
+        //Class.forName("com.mysql.jdbc.Driver");  
     }
 
     public void insertEstudiante(
-            String nombre, 
-            String primer_apellido, 
-            String segundo_apellido, 
-            String cedula, 
-            String fecha_nacimiento, 
-            String telefono, 
-            String correo, 
-            String nombre_madre, 
-            String primer_apellido_madre, 
-            String segundo_apellido_madre, 
-            String nombre_padre, 
-            String primer_apellido_padre, 
-            String segundo_apellido_padre
+            String nombre,
+            String primer_apellido,
+            String segundo_apellido,
+            String cedula,
+            String fecha_nacimiento,
+            String telefono,
+            String correo,
+            String nombre_madre,
+            String primer_apellido_madre,
+            String segundo_apellido_madre,
+            String nombre_padre,
+            String primer_apellido_padre,
+            String segundo_apellido_padre,
+            String grado
+            
         ) throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.jdbc.Driver");
         connection = DriverManager.getConnection(url, username, password);
@@ -44,34 +44,36 @@ public class DAL_Estudiantes {
         stmt.execute("insert into Estudiantes(nombre, primer_apellido,segundo_apellido,"
                 + "cedula,fecha_nacimiento,telefono,correo,nombre_madre,"
                 + "primer_apellido_madre,segundo_apellido_madre,nombre_padre,"
-                + "primer_apellido_padre,segundo_apellido_padre) "
-                + "values ('" 
-                    + nombre 
-                    + "','" 
-                    + primer_apellido 
-                    + "','" 
-                    + segundo_apellido 
-                    + "','" 
-                    + cedula 
-                    + "','" 
-                    + fecha_nacimiento 
-                    + "','" 
-                    + telefono 
-                    + "','" 
-                    + correo 
-                    + "','" 
-                    + nombre_madre 
-                    + "','"
-                    + primer_apellido_madre 
-                    + "','" 
-                    + segundo_apellido_madre 
-                    + "','" 
-                    + nombre_padre 
-                    + "','" 
-                    + primer_apellido_padre 
-                    + "','"
-                    + segundo_apellido_padre 
-                    + "')", 
+                + "primer_apellido_padre,segundo_apellido_padre, grado) "
+                + "values ('"
+                + nombre
+                + "','"
+                + primer_apellido
+                + "','"
+                + segundo_apellido
+                + "','"
+                + cedula
+                + "','"
+                + fecha_nacimiento
+                + "','"
+                + telefono
+                + "','"
+                + correo
+                + "','"
+                + nombre_madre
+                + "','"
+                + primer_apellido_madre
+                + "','"
+                + segundo_apellido_madre
+                + "','"
+                + nombre_padre
+                + "','"
+                + primer_apellido_padre
+                + "','"
+                + segundo_apellido_padre
+                + "','"
+                + grado
+                + "')",
                 0);
 
     }
@@ -83,10 +85,5 @@ public class DAL_Estudiantes {
         stmt.execute("DELETE FROM Estudiantes where cedula = '" + cedula + "'", 0);
 
     }
-
-    
-    
-
-    
 
 }
