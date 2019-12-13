@@ -6,6 +6,7 @@
 
 package clases;
 import java.util.regex.*;
+import java.lang.String;
 
 /**
  *
@@ -46,10 +47,11 @@ public class Validador {
     }
     public boolean EsCedula(String pCedula){
         boolean resultado = false;
-        boolean lengthTrue = pCedula.length() > 6;
-        Pattern regex = Pattern.compile("[0-9]");
+        //boolean lengthTrue = pCedula.length() > 6;
+        Pattern regex = Pattern.compile("[0-9a-zA-Z]{8,10}");
         Matcher matcher = regex.matcher(pCedula);
-        if(matcher.find() && lengthTrue){
+        //if(matcher.find() && lengthTrue){
+        if(matcher.find()){
             resultado = true;
         }
         return resultado;
@@ -57,10 +59,10 @@ public class Validador {
     }
     public boolean EsTelefono(String pTelefono){
         boolean resultado = false;
-        boolean lengthTrue = pTelefono.length() == 8;
-        Pattern regex = Pattern.compile("[0-9]");
+       // boolean lengthTrue = pTelefono.length() == 8;
+        Pattern regex = Pattern.compile("[0-9]{8}");
         Matcher matcher = regex.matcher(pTelefono);
-        if(matcher.find() && lengthTrue){
+        if(matcher.find()){
             resultado = true;
         }
         return resultado;
