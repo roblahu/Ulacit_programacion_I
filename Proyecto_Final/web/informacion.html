@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Realizar Pagos</title>
+<title>Informacion en Registro de Estudiantes</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 <style>
-      .bg-img{
-        background-image: url("https://i.ytimg.com/vi/BZDyr2OpWBU/maxresdefault.jpg");
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: cover; /* Resize the background image to cover the entire container */
-      }
+    .bg-img{
+      background-image: url("https://i.ytimg.com/vi/BZDyr2OpWBU/maxresdefault.jpg");
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire container */
+    }
 html,body{
   width: 100%;
   height: 100%;
@@ -77,31 +77,31 @@ align-items: center;
 </div>
 <!-- ************************************************************* -->
 <div class="level">
-		<div class="container center">
-		<div class="tile is-parent" name="frm">
-		<article class="tile is-child notification x-notif">
-		<p class="subtitle center">Ingrese el numero de cedula del estudiante</p>
-		<div class="level center">
-		<!-- *************************** -->
-		<div class="section center">
-		<div class="field">
-		<label class="label x-white">Cedula</label>
-		<p class="control">
-		<input class="input" type="text" name="cedula" placeholder="Ingresar Numero de Cedula">
-		</p>
-		<br>
-		<div class="control center">
-		<button class="button is-success" type="submit" name="submit" id="submitPayment" formaction="pago_consulta.jsp" >Submit</button>
-		</div>
-		</div>
-		</div>
-		<!-- *************************** -->
-		</div>
-		</article>
-		</div>
-		</div>
-		
-		</div>
+<div class="container center">
+<div class="tile is-parent">
+<article class="tile is-child notification x-notif">
+<p class="subtitle center">Ingrese el numero de cedula del estudiante</p>
+<div class="level center">
+<!-- *************************** -->
+<div class="section center">
+<div class="field" name="frm">
+<label class="label x-white">Cedula</label>
+<p class="control">
+<input class="input" type="text" id="cedula" name="cedula" placeholder="Ingresar Numero de Cedula">
+</p>
+<br>
+<div class="control center">
+<button class="button is-success" type="submit" name="submit" id="submitPayment" formaction="busqueda.jsp" >Submit</button>
+</div>
+</div>
+</div>
+<!-- *************************** -->
+</div>
+</article>
+</div>
+</div>
+
+</div>
 </div>
 
 </div>

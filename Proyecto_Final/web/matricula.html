@@ -1,196 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Matricula de Estudiantes</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matricula de Estudiantes</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<style>
+  .x-white{
+    color: white;
+  }
+    .bg-img{
+      background-image: url("https://i.ytimg.com/vi/BZDyr2OpWBU/maxresdefault.jpg");
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire container */
+    }
+html,body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.x-hero{
+        height: 94.5% !important;
+    }
+.center{
+display: flex;
+justify-content:center;
+align-items: center;
+}
+</style>
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Programacion I</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevos Estudiantes<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="matricula.html">Matricular Estudiante</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav">    
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Estudiantes Actuales <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="estudiantes.html">Información de Estudiantes</a></li>
-            <li><a href="pagos.html">Realizar Pagos</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item" href="index.html">Secundaria ABC</a>
+<a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</a>
+</div>
+<div class="navbar-menu">
+<div class="navbar-start">
+<div class="navbar-item has-dropdown">
+<a class="navbar-link">Nuevos Estudiantes</a>
+<div class="navbar-dropdown custom-list">
+<a class="navbar-item is-hidden" href="matricula.html">Matricula</a>
+</div>
+</div>
+<div class="navbar-item has-dropdown">
+<a class="navbar-link">Estudiantes Regulares</a>
+<div class="navbar-dropdown custom-list">
+<a class="navbar-item is-hidden" href="informacion.html">Informacion de estudiantes</a>
+<a class="navbar-item is-hidden" href="pagos.html">Pagos</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<section class="hero bg-img x-hero">
+<div class="hero-body">
+<br>
+<br>
+<br>
+<div class="level">
+<div class="level-left">
+<p class="title x-white">Secundaria ABC</p>
+</div>
+</div>
+<br>
+<div class="container center">
+<div class="level-left">
+<p class="title center x-white">Ingrese los datos del estudiante</p>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="container center">
+<fieldset >
+<!-- -->
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Nombre Estudiante</label>
+</div>
+<div class="field-body">
+<div class="field">
+<p class="control is-expanded has-icons-left">
+<input class="input" type="text" placeholder="Nombre" name="nombre">
+<span class="icon is-small is-left">
+<i class="fas fa-user"></i>
+</span>
+</p>
+</div>
+<!--- -->
+<div class="field">
+<p class="control is-expanded">
+<input class="input is-success" type="text" placeholder="Primer Apellido" name="primer_apellido">
+</p>
+</div>
+<!--- -->
+<div class="field">
+<p class="control is-expanded">
+<input class="input is-success" type="text" placeholder="Segundo Apellido" name="segundo_apellido" >
+</p>
+</div>
+</div>
+</div>
+<!--- -->
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Cedula Estudiante</label>
+</div>
+<div class="field-body">
+<div class="field is-expanded">
+<div class="field has-addons">
+<p class="control is-expanded has-icons-left">
+<input class="input" type="email" placeholder="Numero de Cedula" name="cedula">
+<span class="icon is-small is-left">
+<i class="fas fa-address-card"></i>
+</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--- -->
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Fecha de Nacimiento</label>
+</div>
+<div class="field-body">
+<div class="field is-expanded">
+<div class="field has-addons">
+<p class="control is-expanded has-icons-left">
+<input class="input" type="date" placeholder="DD-MM-AAAA" name="fecha_nacimiento">
+<span class="icon is-small is-left">
+<i class="fas fa-calendar"></i>
+</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--- -->
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Telefono</label>
+</div>
+<div class="field-body">
+<div class="field is-expanded">
+<div class="field has-addons">
+<p class="control is-expanded has-icons-left">
+<input class="input" type="tel" placeholder="Telefono (+506)" name="telefono">
+<span class="icon is-small is-left">
+<i class="fas fa-phone"></i>
+</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--- -->
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Correo Electronico</label>
+</div>
+<div class="field-body">
+<div class="field is-expanded">
+<div class="field has-addons">
+<p class="control is-expanded has-icons-left">
+<input class="input" type="email" placeholder="Email" name="correo">
+<span class="icon is-small is-left">
+<i class="fas fa-envelope"></i>
+</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- -->
 
-  <div class="container">
-    <h3>Proyecto Final Programacion I</h3>
-  </div>
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Nombre Madre</label>
+</div>
+<div class="field-body">
+<div class="field">
+<p class="control is-expanded has-icons-left">
+<input class="input" type="text" placeholder="Nombre" name="nombre_madre">
+<span class="icon is-small is-left">
+<i class="fas fa-user"></i>
+</span>
+</p>
+</div>
+<!--- -->
+<div class="field">
+<p class="control is-expanded">
+<input class="input is-success" type="text" placeholder="Primer Apellido" name="primer_apellido_madre">
+</p>
+</div>
+<!--- -->
+<div class="field">
+<p class="control is-expanded">
+<input class="input is-success" type="text" placeholder="Segundo Apellido" name="segundo_apellido_madre">
+</p>
+</div>
+</div>
+</div>
+<!-- -->
 
-  <center><h2 style="color: #00AEEF">Ingrese datos del Estudiante</h2></center>
-  <body>
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Nombre Padre</label>
+</div>
+<div class="field-body">
+<div class="field">
+<p class="control is-expanded has-icons-left">
+<input class="input" type="text" placeholder="Nombre" name="nombre_padre">
+<span class="icon is-small is-left">
+<i class="fas fa-user"></i>
+</span>
+</p>
+</div>
+<!--- -->
+<div class="field">
+<p class="control is-expanded">
+<input class="input is-success" type="text" placeholder="Primer Apellido" name="primer_apellido_padre">
+</p>
+</div>
+<!--- -->
+<div class="field">
+<p class="control is-expanded">
+<input class="input is-success" type="text" placeholder="Segundo Apellido" name="segundo_apellido_padre">
+</p>
+</div>
+</div>
+</div>
 
-    <center>
-      <div class="container">
-        <div class="row">
 
-          <div class="col-sm-12" style="background-color:#CECECE;">
-            <form name="miForm" action="validacion.jsp" method="post">
-              <table>
-                <tr>
-                  <td>
-                    Nombre
-                  </td>
-                  <td>
-                    <input type="text" name="nombre" />
-                  </td>
-                  <td>
-                    Primer Apellido 
-                  </td>
-                  <td>
-                    <input type="text" name="primer_apellido" />
-                  </td>
-                  <td>
-                    Segundo Apellido
-                  </td>
-                  <td>
-                    <input type="text" name="segundo_apellido" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Cédula
-                  </td>
-                  <td>
-                    <input type="text" name="cedula"/> 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Fecha de Nacimiento
-                  </td>
-                  <td>
-                    <input type="date" name="fecha_nacimiento"/> 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Teléfono: (506) 
-                  </td>
-                  <td>
-                    <input type="text" name="telefono" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Correo Electrónico 
-                  </td>
-                  <td>
-                    <input type="text" name="correo" placeholder="Ingrese su correo"/> 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Nombre Madre
-                  </td>
-                  <td>
-                    <input type="text" name="nombre_madre" />
-                  </td>
-                  <td>
-                    Primer Apellido 
-                  </td>
-                  <td>
-                    <input type="text" name="primer_apellido_madre" />
-                  </td>
-                  <td>
-                    Segundo Apellido
-                  </td>
-                  <td>
-                    <input type="text" name="segundo_apellido_madre" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Nombre Padre
-                  </td>
-                  <td>
-                    <input type="text" name="nombre_padre" />
-                  </td>
-                  <td>
-                    Primer Apellido 
-                  </td>
-                  <td>
-                    <input type="text" name="primer_apellido_padre" />
-                  </td>
-                  <td>
-                    Segundo Apellido
-                  </td>
-                  <td>
-                    <input type="text" name="segundo_apellido_padre" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Grado 
-                  </td>
-                  <td>
-                    <select name="grado">
-                    <option name="primer_grado">Primer Grado</option>
-                    <option name="segundo_grado">Segundo Grado</option>
-                    <option name="tercer_grado">Tercero Grado</option>
-                    <option name="cuarto_grado">Cuarto Grado</option>
-                    <option name="quinto_grado">Quinto Grado</option>
-                    <option name="sexto_grado">Sexto Grado</option>
-                  </select> 
-                </td>   
-              </tr>
-                <tr>
-                  <td>
-                    Materias a matricular 
-                  </td>
-                  <td>
-                    <input type="checkbox" name="espanol">Español
-                  </td>
-                  <td>
-                    <input type="checkbox" name="ciencias">Ciencias
-                  </td>
-                  <td>
-                    <input type="checkbox" name="ingles">Ingles
-                  </td>
-                  <td>
-                    <input type="checkbox" name="matematicas">Matemáticas
-                  </td>
-                  <td>
-                    <input type="checkbox" name="civica">Cívica
-                  </td>
-                  <td>
-                    <input type="checkbox" name="estudios_sociales">Estudios Sociales
-                  </td>
-                </tr>
-              <tr>
-                <td>
-                  <input type="submit" value="Enviar" />
-                </td>
-                <td>
-                  <input type="reset" value="Borrar" />
-                </td>
-              </tr>
-            </table>
-          </form>
-        </div>
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+<label class="label x-white">Grado</label>
+</div>
+<div class="field-body">
+<div class="field is-narrow">
+<div class="control">
+<div class="select is-fullwidth">
+<select name="grado">
+<option disabled selected>Selecciona un Grado</option>
+<option name="pre-kinder">Pre-Kinder</option>
+<option name="kinder">Kinder</option>
+<option name="primer_grado">Primer Grado</option>
+<option name="segundo_grado">Segundo Grado</option>
+<option name="tercer_grado">Tercer Grado</option>
+<option name="cuarto_grado">Cuarto Grado</option>
+<option name="quinto_grado">Quinto Grado</option>
+<option name="sexto_grado">Sexto Grado</option>
+<option name="septimo_grado">Septimo Grado</option>
+<option name="octavo_grado">Octavo Grado</option>
+<option name="noveno_grado">Noveno Grado</option>
+<option name="decimo_grado">Decimo Grado</option>
+<option name="undecimo_grado">Undecimo Grado</option>
+<option name="preparatoria">Preparatoria</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-      </div>
+<div class="field is-horizontal">
+<div class="field-label">
+<!-- Left empty for spacing -->
+</div>
 
-    </center>
 
-  </body>
-  </html>
+
+<div class="field-body">
+<div class="field">
+<div class="control">
+<button class="button is-primary" type="submit" formaction="validacion.jsp">
+Enviar
+</button>
+</div>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+</div>
+</section>
+</body>
+<script>
+(function(){
+var buttons = document.getElementsByClassName('has-dropdown');
+for(let i = 0; i < buttons.length;i++){
+buttons[i].addEventListener('click',function(){
+buttons[i].classList.toggle('is-active');
+//
+var b2 = buttons[i].getElementsByClassName('navbar-item'); 
+for(let j = 0; j < b2.length;j++){
+if(b2[j].nodeType === 1){
+b2[j].classList.toggle('is-hidden');
+}
+}
+//
+});
+}
+//
+var navbarBurger = document.getElementById('navbar-burger');
+var navbarMenu = document.getElementsByClassName('navbar-menu')[0];
+navbarBurger.addEventListener('click',function(e){
+navbarBurger.classList.toggle('is-active');
+navbarMenu.classList.toggle('is-active');
+});
+})();
+</script>
+</html>

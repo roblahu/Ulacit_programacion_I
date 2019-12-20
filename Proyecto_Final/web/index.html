@@ -1,39 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Sistema De Matricula</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Programacion I</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevos Estudiantes<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="matricula.html">Matricular Estudiante</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav">    
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Estudiantes Actuales <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="estudiantes.html">Información de Estudiantes</a></li>
-            <li><a href="pagos.html">Realizar Pagos</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container">
-    <h3>Proyecto Final Programacion I</h3>
-  </div>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de matricula</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+      .bg-img{
+        background-image: url("https://i.ytimg.com/vi/BZDyr2OpWBU/maxresdefault.jpg");
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+      }
+      html,body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    .center{
+    	display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+    img{
+      border-radius: 5px;
+    /*is-128x128*/
+    /* max-width:128px; */
+    /* max-height:128px; */
+    }
+    .extra_0{
+      width: 100%;
+      max-height: 80%;
+      z-index: 1;
+      filter: blur(3px);
+    }
+    .extra_0 > div{
+      height: 20%;
+    }
+    .extra_1{
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      /* position: absolute; */
+    }
+    .extra_2{
+      z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 15%;
+    }
+    .extra_2 *{
+      width: 100%;
+      height: 100%;
+    }
+    .extra_1 > img{
+      filter: blur(10px);
+    }
+    #blurry{
+      filter: blur(10px);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .x-center{
+    	display: flex;
+      justify-content:center;
+    }
+    .x-left{
+      float: left;
+      width: 100%;
+    }
+    .x-opacity{
+      opacity: 0.5;
+    }
+    .x-white{
+      color: white;
+    }
+    .x-pad{
+      padding: 5pt 12pt;
+    }
+    .x-custom{
+   position: absolute; 
+   bottom: 0;
+   left: 0; 
+   width: 100%; 
+    }
+    .x-transparent{
+      background-color: rgba(122, 122, 122, 0.7);
+      border-radius: 8px;
+    }
+    .x-centered{
+      width: 60%;
+      height: 60%;
+    }
+    .wellposition{
+      width: 100%;
+      height: 92.8%;
+      /* min-height: 100vh; */
 
-</body>
+    	display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+    </style>
+  </head>
+  <body>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item" href="index.html">Secundaria ABC</a>
+<a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</a>
+</div>
+<div class="navbar-menu">
+<div class="navbar-start">
+<div class="navbar-item has-dropdown">
+<a class="navbar-link">Nuevos Estudiantes</a>
+<div class="navbar-dropdown custom-list">
+<a class="navbar-item is-hidden" href="matricula.html">Matricula</a>
+</div>
+</div>
+<div class="navbar-item has-dropdown">
+<a class="navbar-link">Estudiantes Regulares</a>
+<div class="navbar-dropdown custom-list">
+<a class="navbar-item is-hidden" href="informacion.html">Informacion de estudiantes</a>
+<a class="navbar-item is-hidden" href="pagos.html">Pagos</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+    <div class="wellposition bg-img">
+
+    <div class="x-centered">
+        <section class="hero">
+        <div class="hero-body">
+        <div class="container">
+        <figure class="image x-center">
+          <img class="extra_0" src="https://www.wisebread.com/files/fruganomics/imagecache/605w/blog-images/happy-teens.jpg" />
+          <div class="level extra_2 x-custom">
+              <div class="">
+                  <article class="x-white x-left x-pad title x-transparent">Secundaria ABC</article>
+              </div>
+        </div>
+        
+        
+        </figure>
+        </div>
+        </div>
+        </section>
+      </div>
+    </div>
+
+  </body>
+  <script>
+  (function(){
+  var buttons = document.getElementsByClassName('has-dropdown');
+  for(let i = 0; i < buttons.length;i++){
+  buttons[i].addEventListener('click',function(){
+  buttons[i].classList.toggle('is-active');
+  //
+  var b2 = buttons[i].getElementsByClassName('navbar-item'); 
+  for(let j = 0; j < b2.length;j++){
+  if(b2[j].nodeType === 1){
+  b2[j].classList.toggle('is-hidden');
+  }
+  }
+  //
+  });
+  }
+  //
+  var navbarBurger = document.getElementById('navbar-burger');
+  var navbarMenu = document.getElementsByClassName('navbar-menu')[0];
+  navbarBurger.addEventListener('click',function(e){
+  navbarBurger.classList.toggle('is-active');
+  navbarMenu.classList.toggle('is-active');
+  });
+  })();
+  </script>
 </html>
